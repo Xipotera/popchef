@@ -1,0 +1,22 @@
+{
+  "type": "sqlite",
+  "database": "db.sqlite",
+  "entities": [
+    "**/*.entity{.ts,.js}"
+  ],
+  "migrationsTableName": "migration",
+  "migrations": [
+    "src/migration/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "src/migration"
+  },
+  "synchronize": false,
+  "ssl": false,
+  "seeds": [
+    "src/db/seeding/seeds/**/*{.ts,.js}"
+  ],
+  "factories": [
+    "src/db/seeding/factories/**/*{.ts,.js}"
+  ]
+}

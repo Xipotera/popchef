@@ -25,7 +25,7 @@ export class ProductsController {
   async findProduct(@Param('id') id: string) {
     const user = await this.productsService.findOne(parseInt(id));
     if (!user) {
-      throw new NotFoundException('user not found');
+      throw new NotFoundException('product not found');
     }
     return user;
   }
@@ -37,7 +37,7 @@ export class ProductsController {
 
   @Delete('/:id')
   removeProduct(@Param('id') id: string) {
-    return this.productsService.remove(parseInt(id));
+    this.productsService.remove(parseInt(id));
   }
 
   @Patch('/:id')
